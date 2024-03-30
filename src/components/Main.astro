@@ -1,23 +1,57 @@
-<main class="text-dark-slate-grey">
- <section id="content-section">
-  <h1 class="font-bold text-4xl md:text-6xl py-6">Stay updated!</h1>
-  <p>Join 60,000+ product managers receiving monthly updates on:</p>
-  <div id="list-updates">
-   <ul>
-    <li>Product discovery and building what matters</li>
-    <li>Measuring to ensure updates are a success</li>
-    <li>And much more!</li>
-   </ul>
-  </div>
+<main
+ class="text-dark-slate-grey bg-white h-screen flex flex-col-reverse rounded-2xl md:p-4"
+>
+ <section
+  id="content-section"
+  class="mx-auto grow md:grow-0 grid grid-cols-1 items-start w-4/5"
+ >
+  <div>
+   <h1 class="font-bold text-5xl md:text-6xl py-4 my-4">Stay updated!</h1>
+   <p class="py-2 md:py-4">
+    Join 60,000+ product managers receiving monthly updates on:
+   </p>
+   <div id="list-updates" class="py-4 mt-4">
+    <ul class="space-y-6 list-image-[url(/images/icon-list.svg)] list-inside">
+     <li>Product discovery and building what matters</li>
+     <li>Measuring to ensure updates are a success</li>
+     <li>And much more!</li>
+    </ul>
+   </div>
 
-  <form method="post">
-   <fieldset>
-    <label for="email">Email address</label>
-    <input type="email" name="email" required />
-    <button type="submit">Subscribe to monthly newsletter</button>
-   </fieldset>
-  </form>
+   <form method="post">
+    <fieldset class="flex flex-col items-start">
+     <label for="email" class="font-bold text-sm py-3">Email address</label>
+     <input
+      type="email"
+      name="email"
+      class="border border-grey-color rounded-lg focus:ring-grey-color w-full px-4 py-2"
+      required
+     />
+     <button
+      type="submit"
+      class="py-4 px-8 rounded-lg my-4 w-full text-white bg-dark-slate-grey hover:bg-gradient-to-r from-tomato to-orange-500 hover:shadow-lg hover:shadow-tomato"
+      >Subscribe to monthly newsletter</button
+     >
+    </fieldset>
+   </form>
+  </div>
  </section>
 
- <section id="image-section"></section>
+ <section id="image-section" class="grow-0 self-stretch">
+  <picture>
+   <source
+    media="(max-width: 760px)"
+    srcset="/images/illustration-sign-up-mobile.svg"
+   />
+   <source
+    media="(min-width: 760.99px)"
+    srcset="/images/illustration-sign-up-desktop.svg"
+   />
+   <img
+    class="w-full"
+    src="/images/illustration-sign-up-desktop.svg"
+    alt="Newsletter signup illustration"
+   />
+  </picture>
+ </section>
 </main>
