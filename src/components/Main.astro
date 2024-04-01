@@ -2,12 +2,16 @@
 import "../global.css";
 import Thankyou from "./Thankyou.astro";
 let isSubmitted = false;
+let emailFromUser = "";
 
 if (Astro.request.method === "POST") {
  try {
   const data = await Astro.request.formData();
   const email = data.get("email");
-  isSubmitted = true;
+  if (email) {
+   isSubmitted = true;
+   emailFromUser = email;
+  }
   console.log(email);
  } catch (err) {
   console.error(err);
@@ -79,6 +83,6 @@ if (Astro.request.method === "POST") {
   </section>
  </div>
 </main>
-<Thankyou isSubmitted={isSubmitted} />
+<Thankyou isSubmitted={isSubmitted} emailFromUser={emailFromUser} />
 
 <script></script>

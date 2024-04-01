@@ -1,6 +1,6 @@
 ---
 import "../global.css";
-let { isSubmitted } = Astro.props;
+let { isSubmitted, emailFromUser } = Astro.props;
 console.log(isSubmitted);
 ---
 
@@ -15,8 +15,9 @@ console.log(isSubmitted);
     Thank you for subscribing.
    </h1>
    <p>
-    A confirmation email has been sent to ash@loremcompany.com. Please open it
-    and click the button inside to confirm your subscription.
+    A confirmation email has been sent to <span class="font-bold"
+     >{emailFromUser}</span
+    >. Please open it and click the button inside to confirm your subscription.
    </p>
 
    <button type="reset" class="btn-global" id="dismiss" @onclick="clearForm();"
