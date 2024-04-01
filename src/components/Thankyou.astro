@@ -1,0 +1,40 @@
+---
+import "../global.css";
+let { isSubmitted } = Astro.props;
+console.log(isSubmitted);
+---
+
+<main>
+ <div
+  id="thanyou-submission"
+  class={`${isSubmitted ? "visible" : "invisible hidden"} text-dark-slate-grey bg-white h-screen md:h-min md:max-w-lg md:mx-auto flex flex-col-reverse md:flex-row rounded-2xl md:p-4`}
+ >
+  <section class="w-3/4 mx-auto space-y-8 my-6">
+   <img src="/images/icon-success.svg" alt="success icon" />
+   <h1 class="font-bold text-4xl md:text-5xl py-4 md:py-0 my-4 md:mb-2 md:mt-4">
+    Thank you for subscribing.
+   </h1>
+   <p>
+    A confirmation email has been sent to ash@loremcompany.com. Please open it
+    and click the button inside to confirm your subscription.
+   </p>
+
+   <button type="reset" class="btn-global" id="dismiss" @onclick="clearForm();"
+    >Dismiss Message</button
+   >
+  </section>
+ </div>
+</main>
+
+<script>
+ // close the user's current window
+ document.getElementById("dismiss")?.addEventListener("click", () => {
+  const closeWindowConfirm = window.confirm(
+   "Are you sure you want to close this window?"
+  );
+  if (closeWindowConfirm) {
+   console.log("closee...");
+   window.location.href = "/";
+  }
+ });
+</script>
